@@ -1,43 +1,43 @@
 # 🐾 Animal Identification Expert System
 
-Un **sistema experto en Prolog** que identifica animales mediante preguntas interactivas.
+A **Prolog-based expert system** that identifies animals through interactive questioning.
 
 ---
 
-## 📦 Requisitos
+## 📦 Requirements
 
-- [SWI-Prolog](https://www.swi-prolog.org/) (recomendado)
+- [SWI-Prolog](https://www.swi-prolog.org/) (recommended)
 
 ---
 
-## 📥 Instalación
+## 📥 Installation
 
 ```bash
-# Clona el repositorio
+# Clone the repository
 git clone https://github.com/BasantesAndres/Prolog_lab02
 cd Prolog_lab02
 
-# Inicia SWI-Prolog
+# Start SWI-Prolog
 swipl
 ```
 
-Carga el sistema (ajusta el nombre si corresponde):
+Load the system (adjust the filename if needed):
 
 ```prolog
-?- [lab2].        % o: ?- ['lab2.pl'].
+?- [lab2].        % or: ?- ['lab2.pl'].
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-Inicia la identificación interactiva:
+Start the interactive identification system:
 
 ```prolog
 ?- start.
 ```
 
-**Ejemplo de sesión:**
+**Example session:**
 
 ```text
 === ANIMAL IDENTIFICATION EXPERT SYSTEM ===
@@ -53,14 +53,14 @@ I think the animal is: dog
 
 ## 📖 Usage Guide
 
-| Comando                  | Descripción                                   |
-|-------------------------|-----------------------------------------------|
-| `start.`                | Inicia la identificación interactiva          |
-| `list_animals.`         | Muestra todos los animales conocidos          |
-| `test_system.`          | Ejecuta pruebas integrales del sistema        |
-| `show_properties(cat).` | Muestra propiedades de un animal específico   |
+| Command                  | Description                                 |
+|-------------------------|---------------------------------------------|
+| `start.`                | Launch interactive identification           |
+| `list_animals.`         | Show all known animals                      |
+| `test_system.`          | Run the system’s comprehensive tests        |
+| `show_properties(cat).` | Display the properties of a specific animal |
 
-**Ejemplos útiles:**
+**Examples:**
 ```prolog
 ?- list_animals.
 ?- show_properties(cat).
@@ -73,16 +73,16 @@ I think the animal is: dog
 
 ## 🏗️ System Architecture
 
-### Base de Conocimiento (hechos)
+### Knowledge Base (facts)
 
 ```prolog
-has_fur(Animal).     % Mamíferos
-lays_eggs(Animal).   % Aves, reptiles
-flies(Animal).       % Animales voladores
-swims(Animal).       % Animales acuáticos
+has_fur(Animal).     % Mammals
+lays_eggs(Animal).   % Birds, reptiles
+flies(Animal).       % Flying animals
+swims(Animal).       % Aquatic animals
 ```
 
-### Motor de Inferencia (flujo)
+### Inference Engine (flow)
 
 ```text
 User Input → Questions → Pattern Matching → Classification → Result
@@ -92,13 +92,13 @@ User Input → Questions → Pattern Matching → Classification → Result
 
 ## 🧪 Testing
 
-Ejecuta la batería de pruebas:
+Run the full test suite:
 
 ```prolog
 ?- test_system.
 ```
 
-**Salida esperada (ejemplo):**
+**Expected output (example):**
 ```text
 === SYSTEM TESTS ===
 Mammals:
@@ -119,31 +119,37 @@ Animals that fly:
 - eagle
 ```
 
-### Casos de prueba individuales
+### Individual test cases
 
-| Prueba                   | Comando Prolog             | Resultado esperado |
-|-------------------------|----------------------------|--------------------|
-| Clasificación mamífero  | `?- is_mammal(dog).`       | `true.`            |
-| Clasificación ave       | `?- is_bird(chicken).`     | `true.`            |
-| Capacidad de volar      | `?- can_fly(eagle).`       | `true.`            |
-| Capacidad de nadar      | `?- can_swim(duck).`       | `true.`            |
-| Ver propiedades         | `?- show_properties(cat).` | lista de atributos |
+| Test                    | Prolog Command             | Expected Result |
+|-------------------------|----------------------------|-----------------|
+| Mammal classification   | `?- is_mammal(dog).`       | `true.`         |
+| Bird classification     | `?- is_bird(chicken).`     | `true.`         |
+| Flying ability          | `?- can_fly(eagle).`       | `true.`         |
+| Swimming ability        | `?- can_swim(duck).`       | `true.`         |
+| Show properties         | `?- show_properties(cat).` | lists attributes |
 
 ---
 
-## 🗂️ Estructura sugerida del repositorio
+## 🗂️ Suggested Repository Structure
 
 ```text
 Prolog_lab02/
-├─ lab2.pl                 % Sistema experto (hechos + reglas + start/0)
-├─ tests.pl                % Opcional: consultas usadas por test_system/0
-└─ README.md               % Este archivo
+├─ lab2.pl                 % Main expert system (facts + rules + start/0)
+├─ tests.pl                % Optional: queries used by test_system/0
+└─ README.md               % This file
 ```
 
 ---
 
 ## 🛠️ Tips
 
-- Agrupa hechos por categoría (mamíferos, aves, reptiles, acuáticos).
-- Añade animales declarando sus propiedades (ej.: `has_fur(cat).`, `meows(cat).`).
-- Si varios animales coinc
+- Group facts by category (mammals, birds, reptiles, aquatic).
+- Add new animals by asserting their properties (e.g., `has_fur(cat).`, `meows(cat).`).
+- If multiple animals match, refine the question flow inside `start/0`.
+
+---
+
+## 📜 License
+
+MIT — free to use, modify, and distribute.
