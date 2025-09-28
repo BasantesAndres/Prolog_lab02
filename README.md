@@ -142,14 +142,4 @@ Prolog_lab02/
 
 ---
 
-## 🛠️ Tips
 
-- Group facts by category (mammals, birds, reptiles, aquatic).
-- Add new animals by asserting their properties (e.g., `has_fur(cat).`, `meows(cat).`).
-- If multiple animals match, refine the question flow inside `start/0`.
-
----
-
-## 📜 License
-
-MIT — free to use, modify, and distribute.
